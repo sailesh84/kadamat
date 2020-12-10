@@ -1,0 +1,285 @@
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center" style="background-color:#F1F0CB;">
+
+    <div class="container" style="margin-bottom: 10%;">
+      <div class="row">
+        <div class="col-lg-12 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <span class="tagLine">The Convenient & Fast Way</span>
+          <span class="tagLineSubline">to get things done around the house</span>
+		  <span class="serachf">  <input type="text" class="searchfield" id="searchfield" placeholder="What needs to be done ?">
+         </span>
+		 <span class="serachfExam">Example: to clean a house, fix air conditioners, wash a car</span>
+          <div class="serachf"><a routerLink="/create-order" class="btn-get-started scrollto creatOrderbtn"  data-toggle="modal"  data-target="#createOrder">Create Order</a></div>
+        </div>
+
+      </div>
+    </div>
+<div class="modal fade" id="createOrder" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog  modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content text-center">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Select a service</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+	  <div class="modal-body servicemar">
+
+          <div class="col-sm-2 imgbck" *ngFor="let serviceType of apiResponse">
+            <div>
+		 <span><img class="imgwidth" src="{{ imgURL }}/{{ serviceType.imageName}}" alt="Random Name"></span><p>
+
+               <span class="serviceTitle">{{ serviceType.category }} </span></p>
+               </div>
+          </div>
+
+</div>
+    </div>
+  </div>
+</div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Slider Section ======= -->
+    <section id="about" class="about">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="/../assets/img/slider1.png" alt="Slider-1" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="/../assets/img/slider1.png" alt="Slide-2" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="/../assets/img/slider1.png" alt="Slider-3" style="width:100%;">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= How it works======= -->
+    <section id="counts">
+      <div class="container">
+
+        <div class="text-center title">
+          <h1>How it works ?</h1>
+           </div>
+
+        <div class="row counters">
+
+          <div class="col-lg-3 col-6 text-center">
+            <span><img class="works" src="/../assets/img/works-1.jpg" alt="Random Name"></span>
+            <span class="steps">1. Chose your service easily</span>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+          <span><img class="works" src="/../assets/img/works-2.jpg" alt="Random Name"></span>
+            <span class="steps">2. Describe what you need</span>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span><img class="works" src="/../assets/img/works-3.jpg" alt="Random Name"></span>
+            <span class="steps">3. Chose the best offer for you</span>
+         </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span><img class="works" src="/../assets/img/works-4.png" alt="Random Name"></span>
+            <span class="steps">4. Complete service and rate a provider</span>
+            </div>
+
+        </div><br><br/>
+		 <div class="serachf"><a routerLink="/create-order" class="btn-get-started scrollto creatOrderbtn order">Create Order</a></div>
+
+
+      </div>
+    </section><!-- End How it works Section -->
+
+ <!-- ======= Reason why us======= -->
+    <section id="counts">
+      <div class="container">
+
+        <div class="text-center title">
+          <h1>Reason why us ?</h1>
+           </div>
+
+        <div class="row counters">
+
+          <div class="col-lg-6 col-6 text-center">
+            <span><img class="works" src="/../assets/img/all_technisian.jpg" alt="Random Name"></span><br/>
+            <span class="steps">All of technicians and companies have a good recommendation by client</span>
+          </div>
+
+          <div class="col-lg-6 col-6 text-center">
+          <span><img class="works" src="/../assets/img/chat_with.jpg" alt="Random Name"></span><br/>
+            <span class="steps">Chat with companies about your problem, needs and price before accepting their offers.</span>
+          </div>
+
+          <div class="col-lg-6 col-6 text-center">
+            <span><img class="works" src="/../assets/img/compare.jpg" alt="Random Name"></span><br/>
+            <span class="steps">Compare tens of offers and hire the best for you.Pay after getting the service as proposed.</span>
+         </div>
+
+          <div class="col-lg-6 col-6 text-center">
+            <span><img class="works" src="/../assets/img/wecare.jpg" alt="Random Name"></span><br/>
+            <span class="steps">We care about your ratings for service providers,it helps us serve you better.</span>
+            </div>
+
+        </div> <br><br/>
+		 <div class="serachf"><a routerLink="/create-order" class="btn-get-started scrollto creatOrderbtn order">Create Order</a></div>
+
+
+      </div>
+    </section><!-- End reason why us Section -->
+
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h1>Select a service</h1>
+          </div>
+
+
+
+ <div class="row">
+          <div class="col-lg-2 col-md-6 serviceTypePanel" *ngFor="let serviceType of apiResponse">
+            <div>
+		 <span><img class="imgwidth" src="{{ imgURL }}/{{ serviceType.imageName}}" alt="Img Name">{{ serviceType.category }}</span><p>
+
+               <span class="serviceTitle">{{ serviceType.category }}</span></p>
+               </div>
+          </div>
+
+</div>
+      </div>
+    </section><!-- End Services Section -->
+
+
+  </main><!-- End #main -->
+ <!-- ======= App Download Section======= -->
+    <section id="counts">
+      <div class="container">
+        <div class="row counters">
+
+          <div class="col-lg-12 col-12 text-center">
+            <span><img class="imgwidth" src="/../assets/img/app-download.jpg"></span>
+           <!-- <span class="steps">1. Chose your service easily</span> -->
+          </div>
+<!--
+          <div class="col-lg-3 col-6 text-center">
+          <span><img class="works" src="assets/img/works-2.jpg" alt="Random Name"></span>
+            <span class="steps">2. Describe what you need</span>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span><img class="works" src="assets/img/works-3.jpg" alt="Random Name"></span>
+            <span class="steps">3. Chose the best offer for you</span>
+         </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span><img class="works" src="assets/img/works-4.png" alt="Random Name"></span>
+            <span class="steps">4. Complete service and rate a provider</span>
+            </div>
+
+        </div>
+		 <div class="serachf"><a href="#" class="btn-get-started scrollto creatOrderbtn order">Create Order</a></div>
+   -->
+</div>
+      </div>
+    </section><!-- End of App Download Section -->
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact" *ngFor="let serviceType of apiResponse">
+            <ul>
+              <li> {{ serviceType.category }}</li>
+
+            </ul>
+          </div>
+
+        <!--  <div class="col-lg-3 col-md-6 footer-links">
+
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Cleaning&HomeMaids</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">AirConditioner</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">ElectricalWork</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Painting&Decor</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Internetnet works</a></li>
+            </ul>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+             <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Cleaning&HomeMaids</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">AirConditioner</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">ElectricalWork</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Painting&Decor</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Internetnet works</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Cleaning&HomeMaids</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">AirConditioner</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">ElectricalWork</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Painting&Decor</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Internetnet works</a></li>
+            </ul>
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+
+
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/../assets/vendor/jquery/jquery.min.js"></script>
+  <script src="/../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="/../assets/vendor/php-email-form/validate.js"></script>
+  <script src="/../assets/vendor/venobox/venobox.min.js"></script>
+  <script src="/../assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="/../assets/vendor/counterup/counterup.min.js"></script>
+  <script src="/../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/../assets/js/main.js"></script>
+<!--
+</body>
+
+</html> -->

@@ -1,0 +1,23 @@
+->Install NodeJs
+
+Reference:
+https://phoenixnap.com/kb/install-node-js-npm-on-windows
+->Extrat the folder.
+-> Enter into folder using command prompt
+Run the following 
+->npm install
+-> node app.js
+
+Open below URL in browser, you will get the details
+
+API URL; 
+// get services lists
+http://localhost:4040/allServices/categoryList
+// get services sub category lists
+http://localhost:4040/allServices/subCategoryList
+// get Unit lists
+http://localhost:4040/allServices/unitList
+// get Area lists
+http://localhost:4040/allServices/areaList
+// Time for execution 
+http://localhost:4040/allServices/timeList

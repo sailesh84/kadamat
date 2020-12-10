@@ -1,0 +1,231 @@
+<div class="body-wrapper container">
+  <div class="row align-center">
+    <h1>Create Order</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <mat-horizontal-stepper labelPosition="bottom">
+        <mat-step>
+          <ng-template matStepLabel>Step1</ng-template>
+          <div class="main-wrapper">
+            <div class="col-md-6 marg-bottom-20">
+              <div class="form-group">
+                <label for="exampleInputPassword1">Select Area</label>
+                <input type="text" class="form-control" id="exampleInputPassword1">
+              </div>
+            </div>
+            <div class="col-md-6 marg-bottom-20">
+              <div class="form-group">
+                <label for="exampleInputPassword1">Select Location</label>
+                <input type="text" class="form-control" id="exampleInputPassword1">
+              </div>
+            </div>
+            <div class="col-md-12 marg-bottom-20">
+              <div class="form-group">
+                <label for="">Choose requested service</label>
+                <div class="form-check" *ngFor="let services of provideServices">
+                  <input class="form-check-input" type="checkbox" value="" id="{{services.servicesId}}">
+                  <label class="form-check-label" for="defaultCheck1">
+                    {{services.servicesName}}
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 marg-bottom-20">
+              <div class="form-group">
+                <label for="">Choose the type unit</label>
+                <div class="form-check" *ngFor="let unit of unitList">
+                  <input class="form-check-input" type="radio" value="" id="{{unit.unitId}}">
+                  <label class="form-check-label" for="defaultCheck1">
+                    {{unit.unitName}}
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="exampleInputPassword1">Number of workers required</label>
+                <input type="number" class="form-control" id="exampleInputPassword1">
+              </div>
+            </div>
+            <div class="col-md-12 text-center">
+              <!-- <button type="button" class="btn btn-lg btn-wb btn-custom btn-primary" (click)="moveToForm2()">Continue</button> -->
+              <button class="btn btn-lg btn-wb btn-custom btn-primary" matStepperNext>Next</button>
+            </div>
+          </div>
+        </mat-step>
+
+        <mat-step>
+          <ng-template matStepLabel>Step2</ng-template>
+          <div class="main-wrapper">
+            <div class="col-md-6">
+              <div class="form-group">
+                <h2 class="sub-child-heading">Describe your requirement clearly</h2>
+                <p>Describe your problem clearly, so service provider understand your problem and give you the best offer</p>
+                <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <h2 class="sub-child-heading">Add photos of the problem (optional)</h2>
+            </div>
+
+            <div class="col-md-12">
+              <div class="form-group">
+                <h2 class="sub-child-heading">Preferred time for execution</h2>
+                <div class="form-check" *ngFor="let pTime of preferredTime">
+                  <input class="form-check-input" type="radio" value="" id="{{pTime.pTimeId}}">
+                  <label class="form-check-label" for="defaultCheck1">
+                    {{pTime.pTimeValue}}
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <h2 class="sub-child-heading">Promo code</h2>
+                <input type="text" name="" id="" class="form-control">
+              </div>
+            </div>
+
+            <div class="col-md-12 text-center">
+              <!-- <button type="button" class="btn btn-lg btn-wb btn-custom btn-primary" (click)="backToForm1()">Back</button> -->
+              <button class="btn btn-lg btn-wb btn-custom btn-primary" matStepperPrevious>Back</button>
+            </div>
+            <div class="col-md-12 text-center">
+              <!-- <button type="button" class="btn btn-lg btn-wb btn-custom btn-secondary" (click)="moveToForm3()">Continue</button> -->
+              <button class="btn btn-lg btn-wb btn-custom btn-secondary" matStepperNext>Continue</button>
+            </div>
+          </div>
+        </mat-step>
+
+        <mat-step>
+          <ng-template matStepLabel>Step3</ng-template>
+          <div class="main-wrapper">
+            <div class="col-md-12 marg-bottom-20">
+              <div class="form-group">
+                <label for="">Choose nationality</label>
+                <div class="form-check" *ngFor="let nationality of nationalityList">
+                  <input class="form-check-input" type="checkbox" value="" id="{{nationality.nationalityId}}">
+                  <label class="form-check-label" for="defaultCheck1">
+                    {{nationality.nationalityName}}
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 marg-bottom-20">
+              <div class="form-group">
+                <label for="">Choose Gender of worker</label>
+                <div class="form-check" *ngFor="let gender of genderList">
+                  <input class="form-check-input" type="checkbox" value="" id="{{gender.genderId}}">
+                  <label class="form-check-label" for="defaultCheck1">
+                    {{gender.genderName}}
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 marg-bottom-20">
+              <div class="form-group">
+                <label for="">Choose daily hours</label>
+                <input type="number" class="form-control" id="exampleInputPassword1">
+              </div>
+            </div>
+
+            <div class="col-md-12 marg-bottom-20">
+              <div class="form-group">
+                <label for="">Required materials</label>
+                <div class="form-check" *ngFor="let material of materialList">
+                  <input class="form-check-input" type="checkbox" value="" id="{{material.materialId}}">
+                  <label class="form-check-label" for="defaultCheck1">
+                    {{material.materialName}}
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 marg-bottom-20">
+              <div class="form-group">
+                <label for="">Number of days required</label>
+                <input type="text" class="form-control" id="exampleInputPassword1">
+              </div>
+            </div>
+
+            <div class="col-md-12 text-center">
+              <!-- <button type="button" class="btn btn-lg btn-wb btn-custom btn-primary" (click)="backToForm2()">Back</button> -->
+              <button class="btn btn-lg btn-wb btn-custom btn-primary" matStepperPrevious>Back</button>
+            </div>
+            <div class="col-md-12 text-center">
+              <!-- <button type="button" class="btn btn-lg btn-wb btn-custom btn-secondary" (click)="moveToForm4()">Continue</button> -->
+              <button class="btn btn-lg btn-wb btn-custom btn-secondary" matStepperNext>Continue</button>
+            </div>
+          </div>
+        </mat-step>
+
+        <mat-step>
+          <ng-template matStepLabel>Step4</ng-template>
+          <div class="main-wrapper">
+            <div class="col-md-6">
+              <div class="form-group marg-bottom-30">
+                <label for="exampleInputPassword1">Area</label>
+                <h4>Al Ghuwariyah</h4>
+              </div>
+              <div class="form-group marg-bottom-30">
+                <label for="exampleInputPassword1">Location</label>
+                <h4>Al Ghuwariyah , Qatar 901</h4>
+              </div>
+              <div class="form-group marg-bottom-30">
+                <label for="exampleInputPassword1">Type of service</label>
+                <h4>House maid</h4>
+              </div>
+              <div class="form-group marg-bottom-30">
+                <label for="exampleInputPassword1">Unit type</label>
+                <h4>Apartement</h4>
+              </div>
+              <div class="form-group marg-bottom-30">
+                <label for="exampleInputPassword1">Number of workers</label>
+                <h4>3</h4>
+              </div>
+              <div class="form-group marg-bottom-30">
+                <label for="exampleInputPassword1">Nationality</label>
+                <h4>Bengali, Indonesian</h4>
+              </div>
+              <div class="form-group marg-bottom-30">
+                <label for="exampleInputPassword1">Worker Gender</label>
+                <h4>Male</h4>
+              </div>
+              <div class="form-group marg-bottom-30">
+                <label for="exampleInputPassword1">Required materials</label>
+                <h4>Service provider brings it</h4>
+              </div>
+              <div class="form-group marg-bottom-30">
+                <label for="exampleInputPassword1">Number of days required</label>
+                <h4>10</h4>
+              </div>
+              <div class="form-group marg-bottom-30">
+                <label for="exampleInputPassword1">Preferred time</label>
+                <h4>Today</h4>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="exampleInputPassword1">Request description</label>
+                <h4>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.</h4>
+              </div>
+            </div>
+            <div class="col-md-12 text-center">
+              <!-- <button type="button" class="btn btn-lg btn-wb btn-custom btn-primary" (click)="backToForm3()">Back</button> -->
+              <button class="btn btn-lg btn-wb btn-custom btn-primary" matStepperPrevious>Back</button>
+            </div>
+            <div class="col-md-12 text-center">
+              <!-- <button type="button" class="btn btn-lg btn-wb btn-custom btn-secondary">Continue</button> -->
+              <button class="btn btn-lg btn-wb btn-custom btn-secondary" matStepperNext>Continue</button>
+            </div>
+          </div>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </div>
+  </div>
+</div>

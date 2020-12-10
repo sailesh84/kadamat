@@ -1,0 +1,151 @@
+<div class="body-wrapper container">
+  <div class="row align-center">
+    <h1>My Orders</h1>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <nav>
+        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link" [ngClass]="showActiveTab ? 'active' : ''" id="nav-active-tab" data-toggle="tab"
+            href="#nav-active" role="tab" aria-controls="nav-active" aria-selected="true"
+            (click)="showActiveOrders()">Active</a>
+          <a class="nav-item nav-link" [ngClass]="showCompletedTab ? 'active' : ''" id="nav-completed-tab"
+            data-toggle="tab" href="#nav-completed" role="tab" aria-controls="nav-completed" aria-selected="false"
+            (click)="showCompletedOrders()">Completed</a>
+        </div>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade" [ngClass]="showActiveTab ? 'active show' : ''" id="nav-active" role="tabpanel"
+            aria-labelledby="nav-active-tab">
+            <div class="tab-content-main">
+              <div class="col-md-12 tab-content-main-wrapper">
+                <span class="pull-right">3 seconds ago</span>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 tab-content-sec-wrapper">
+                  <img src="http://localhost:4200/assets/img//house_maidsCl.jpg" alt="">
+                  <h2>Cleaning & Home maids</h2>
+                  <h4>Order #123456</h4>
+                  <h4>Reviewing</h4>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 tab-content-sec-wrapper">
+                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
+                    massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec
+                    quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                    Donec
+                    pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+                </div>
+              </div>
+
+              <div class="col-md-12 text-center tab-content-sec-wrapper">
+                <div class="col-md-4 text-left no-padd-left">
+                  <button type="button" class="btn btn-lg btn-wb btn-custom btn-primary">View Offers</button>
+                </div>
+                <div class="col-md-4 text-center">
+                  <button type="button" class="btn btn-lg btn-wb btn-custom btn-secondary" disabled="disabled">Cancel
+                    Order</button>
+                </div>
+                <div class="col-md-4 text-right no-padd-right">
+                  <button type="button" class="btn btn-lg btn-wb btn-custom btn-secondary"
+                    disabled="disabled">Report</button>
+                </div>
+              </div>
+
+              <div class="col-md-12 tab-content-last-wrapper">
+                <div class="alert alert-success text-center">
+                  Order under review, shortly will be sent to all service providers
+                </div>
+              </div>
+            </div>
+            <div class="tab-content-main">
+              <div class="col-md-12 tab-content-main-wrapper">
+                <span class="pull-right">3 seconds ago</span>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 tab-content-sec-wrapper">
+                  <img src="http://localhost:4200/assets/img//car_sterilization.jpg" alt="">
+                  <h2>Car Sanitizing</h2>
+                  <h4>Order #123456</h4>
+                  <h4>Open</h4>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 tab-content-sec-wrapper">
+                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
+                    massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec
+                    quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                    Donec
+                    pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+                </div>
+              </div>
+
+              <div class="col-md-12 text-center tab-content-sec-wrapper">
+                <div class="col-md-4 text-left no-padd-left">
+                  <button type="button" class="btn btn-lg btn-wb btn-custom btn-primary">View Offers</button>
+                </div>
+                <div class="col-md-4 text-center">
+                  <button type="button" class="btn btn-lg btn-wb btn-custom btn-secondary" disabled="disabled">Cancel
+                    Order</button>
+                </div>
+                <div class="col-md-4 text-right no-padd-right">
+                  <button type="button" class="btn btn-lg btn-wb btn-custom btn-secondary"
+                    disabled="disabled">Report</button>
+                </div>
+              </div>
+
+              <div class="col-md-12 tab-content-last-wrapper">
+                <div class="alert alert-success text-center">
+                  Order under review, shortly will be sent to all service providers
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="nav-completed" [ngClass]="showCompletedTab ? 'active show' : ''"
+            role="tabpanel" aria-labelledby="nav-completed-tab">
+            <div class="tab-content-main">
+              <div class="col-md-12 tab-content-main-wrapper">
+                <span class="pull-right">3 seconds ago</span>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 tab-content-sec-wrapper">
+                  <img src="http://localhost:4200/assets/img//house_maidsCl.jpg" alt="">
+                  <h2>Cleaning & Home maids</h2>
+                  <h4>Order #123456</h4>
+                  <h4>Reviewing</h4>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 tab-content-sec-wrapper">
+                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
+                    massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec
+                    quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                    Donec
+                    pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+                </div>
+              </div>
+
+              <div class="col-md-12 tab-content-last-wrapper">
+                <button type="button" class="btn btn-lg btn-wb btn-custom btn-secondary"
+                  disabled="disabled">Report</button>
+              </div>
+            </div>
+
+            <div class="tab-content-main">
+              <div class="col-md-12 tab-content-main-wrapper">
+                <span class="pull-right">3 seconds ago</span>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 tab-content-sec-wrapper">
+                  <img src="http://localhost:4200/assets/img//car_sterilization.jpg" alt="">
+                  <h2>Car Sanitizing</h2>
+                  <h4>Order #123456</h4>
+                  <h4>Open</h4>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 tab-content-sec-wrapper">
+                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
+                    massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec
+                    quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                    Donec
+                    pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+                </div>
+              </div>
+
+              <div class="col-md-12 tab-content-last-wrapper">
+                <button type="button" class="btn btn-lg btn-wb btn-custom btn-secondary"
+                  disabled="disabled">Report</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>

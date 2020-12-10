@@ -1,0 +1,90 @@
+<div class="body-wrapper container">
+  <div class="row align-center">
+    <h1>Provider Registration</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="main-wrapper">
+        <div class="col-md-6">
+          <button class="btn btn-lg btn-wb btn-block" [ngClass]="showPersForm2 ? 'btn-primary' : 'btn-secondary'">1: Personal Information</button>
+        </div>
+        <div class="col-md-6">
+          <button class="btn btn-lg btn-wb btn-block" [ngClass]="showProvForm2 ? 'btn-primary' : 'btn-secondary'">2: Proffesional Information</button>
+        </div>
+      </div>
+
+      <div class="content-wrapper" [ngClass]="showPersForm2 ? 'active' : 'inactive'">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Mobile</label>
+            <input type="text" class="form-control" id="exampleInputPassword1">
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Name</label>
+            <input type="text" class="form-control" id="exampleInputPassword1">
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Name in arabic</label>
+            <input type="text" class="form-control" id="exampleInputPassword1">
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Email</label>
+            <input type="text" class="form-control" id="exampleInputPassword1">
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="text" class="form-control" id="exampleInputPassword1">
+          </div>
+        </div>
+        <div class="col-md-12 text-center">
+          <button type="button" class="btn btn-lg btn-wb btn-custom btn-primary" (click)="moveToProfInformation()">Continue</button>
+        </div>
+      </div>
+
+      <div class="content-wrapper" [ngClass]="showProvForm2 ? 'active' : 'inactive'">
+        <div class="col-md-12 text-center">
+          <button type="button" class="btn btn-lg btn-wb btn-custom-1 btn-primary">Company</button>
+          <button type="button" class="btn btn-lg btn-wb btn-custom-1 btn-secondary">Individual</button>
+        </div>
+        <div class="col-md-12 text-center">
+          <h4 class="sub-heading">Company* registration means you are working in a company and needs to upload company documents.</h4>
+          <h2 class="sub-child-heading">Upload a company files* ( max 10 )</h2>
+        </div>
+
+        <div class="col-md-12 text-center multi-chckbx">
+          <h2 class="main-heading">Select services you provide</h2>
+          <div class="form-check" *ngFor="let services of provideServices">
+            <input class="form-check-input" type="checkbox" value="" id="{{services.servicesId}}">
+            <label class="form-check-label" for="defaultCheck1">
+              {{services.servicesName}}
+            </label>
+          </div>
+        </div>
+
+        <div class="col-md-12 text-center multi-chckbx">
+          <h2 class="main-heading">Select areas you cover</h2>
+          <div class="form-check" *ngFor="let areas of areasCoveredForServices">
+            <input class="form-check-input" type="checkbox" value="" id="{{areas.areaId}}">
+            <label class="form-check-label" for="defaultCheck1">
+              {{areas.areaName}}
+            </label>
+          </div>
+        </div>
+        <div class="col-md-12 text-center">
+          <button type="button" class="btn btn-lg btn-wb btn-custom btn-primary" (click)="backToPersInformation()">Back</button>
+        </div>
+        <div class="col-md-12 text-center">
+          <button type="button" class="btn btn-lg btn-wb btn-custom btn-secondary">Continue</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

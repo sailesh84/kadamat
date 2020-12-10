@@ -1,0 +1,40 @@
+.nav-text{
+font-size: 28px;
+font-family: HelveticaNeueLT-Light;
+text-align: left;
+color: #595959;
+}
+.navi-tex{
+background-color: #F1F0CB;
+margin-top: 3%;
+}
+.seletCat{
+font-size: 28px;
+text-align: left;
+color: #595959;
+}
+.logo-left{
+    width: 15%;
+}
+.logo-right{
+    width: 15%;
+}
+.nav_text{
+font-size: 28px;
+font-family: HelveticaNeueLT-Medium;
+text-align: left;
+color: #585858;
+
+}
+.mat-toolbar-row{
+	padding:0px;
+}
+.mat-toolbar-single-row{
+	padding:0px;
+}
+.alignBox{
+	padding-left:3%;
+}
+.top-nav{
+	margin-top: 4%;
+}

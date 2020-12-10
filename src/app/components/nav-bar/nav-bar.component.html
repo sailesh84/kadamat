@@ -1,0 +1,142 @@
+<!-- Toolbar -->
+<!-- <mat-toolbar color="primary" class="app-header"> -->
+<mat-toolbar class="">
+ <!--  <div><a href="https://www.positronx.io" target="_blank" class="positronx">PositronX.io</a></div>
+  <span class="nav-tool-items">
+    <a mat-button routerLink="login" routerLinkActive="active">Log in</a>
+    <a mat-button mat-raised-button routerLink="register" routerLinkActive="active">Register</a>
+  </span> -->
+   <!-- ======= Header ======= -->
+  <header id="header" class="">
+    <div class="align-items-center">
+
+     <!-- Uncomment below if you prefer to use text as a logo -->
+      <!-- <h1 class="logo mr-auto"><a href="index.html">Butterfly</a></h1> -->
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul class="navi-tex">
+           <li class="drop-down"><span style="font-size: 16px;padding-right: 5px;">English</span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M3.204 5L8 10.481 12.796 5H3.204zm-.753.659l4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+</svg>
+            <ul class="selectpicker selectItem" style="
+    top: 45%;
+">
+              <li><a href="#">عربى</a></li>  
+            </ul>
+          </li>
+		    <li class="drop-down"><span style="font-size: 16px;padding-right: 5px;">Category</span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M3.204 5L8 10.481 12.796 5H3.204zm-.753.659l4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+</svg>
+            <ul class="selectpicker selectItem" style="
+    top: 45%;
+">
+              <li  *ngFor="let serviceType of apiResponse"><a href="#">{{ serviceType.category }}</a></li>
+            </ul>
+          </li>
+		 <li class="logo-left"></li>
+		
+		  <li><a href="index.html"><img src="/../assets/img/logo.jpg" alt="" class="img-fluid"></a>
+       </li>
+		<li class="logo-right"></li>
+		
+	   <li class="nav_text"> <!--<a mat-button routerLink="login" routerLinkActive="active">Log in 3</a> -->
+	    <a href="" class="" data-toggle="modal" routerLinkActive="active" data-target="#modalLoginForm">
+    Login</a></li>
+		<li class="nav_text">
+		<!--<a mat-button mat-raised-button routerLink="register" routerLinkActive="active">Register</a> -->
+		
+		 <a href="" class="" data-toggle="modal"  data-target="#modalRegisterForm" > Register</a>
+		</li>
+				
+				
+				</ul>
+		
+      </nav><!-- .nav-menu -->
+  
+
+    </div>
+  </header><!-- End Header -->
+<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Login</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <span class="labelText">Email/Mobile</span>
+		   <label data-error="wrong" data-success="right" for="defaultForm-email"></label>
+     
+          <input type="email" id="defaultForm-email" class="form-control validate">
+            </div>
+
+        <div class="md-form mb-4">
+          <span class="labelText">Password</span>
+          <input type="password" id="defaultForm-pass" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-pass"></label>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+         <button type="submit" class="btn btn-info mt-3">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content alignBox">
+      <div class="modal-header text-center">
+        <h2>Register</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+	  <div class="row" style="
+    margin-left: 2%;
+">
+	  <form #userregister = "ngForm" (ngSubmit) = "onClickSubmit(userregister.value)"> 
+	  <div class="col-sm-1"></div>
+	  <div class="col-sm-5 labelText">Name</div>
+	  <div class="col-sm-5 labelText">Mobile</div>
+	  <div class="col-sm-1"></div>
+	   <div class="col-sm-1"></div>
+     <div class="col-sm-5"><input type="email" name="email" class="form-control mb-2 mr-sm-2" placeholder="Enter email" id="email" ngModel>
+ </div>
+   
+  <div class="col-sm-5"><input type="text" name="mobile" class="form-control mb-2 mr-sm-2" placeholder="Enter Mobile" id="pwd" ngModel>
+</div>
+ <div class="col-sm-1"></div>
+ <div class="col-sm-1"></div>
+	  <div class="col-sm-5 labelText">Email</div>
+	  <div class="col-sm-5 labelText">Password</div>
+	  <div class="col-sm-1"></div>
+	   <div class="col-sm-1"></div>
+     <div class="col-sm-5"><input type="email" class="form-control mb-2 mr-sm-2" name="email" placeholder="Enter email" id="email">
+ </div>
+   
+  <div class="col-sm-5"><input type="password" name="password" class="form-control mb-2 mr-sm-2" placeholder="Enter password" id="pwd">
+</div>
+ <div class="col-sm-1"></div>
+  <div class="col-sm-4"></div>
+	  <div class="col-sm-6 labelText"> Already have an account? Login</div>
+	  <div class="col-sm-2"></div><br/>
+      <div class="col-sm-4"></div>
+	  <div class="col-sm-4"><p></p> <button type="submit" class="btn btn-info mt-3" routerLink="landingpage">Register</button><br/><br/></div>
+	  <div class="col-sm-4"></div>
+	  <div class="col-sm-12"></div>
+ </form>
+</div>
+    </div>
+  </div>
+</div>
+
+
+
+</mat-toolbar>
