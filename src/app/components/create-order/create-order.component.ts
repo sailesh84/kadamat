@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataServiceService } from 'src/app/service/data-service.service';
 
 @Component({
   selector: 'app-create-order',
@@ -18,33 +19,9 @@ export class CreateOrderComponent implements OnInit {
   showForm3: boolean = false;
   showForm4: boolean = false;
 
-  constructor() { }
+  constructor(private dataServices: DataServiceService) { }
 
   ngOnInit(): void {
-    this.provideServices = [
-      {servicesId:1, servicesName: "Options"},
-      {servicesId:2, servicesName: "Options"},
-      {servicesId:3, servicesName: "Options"},
-      {servicesId:4, servicesName: "Options"},
-      {servicesId:5, servicesName: "Options"},
-      {servicesId:6, servicesName: "Options"},
-      {servicesId:7, servicesName: "Options"},
-      {servicesId:8, servicesName: "Options"},
-      {servicesId:9, servicesName: "Options"},
-      {servicesId:10, servicesName: "Options"}
-    ];
-
-    this.unitList = [
-      {unitId:1, unitName:"Options"},
-      {unitId:2, unitName:"Options"},
-      {unitId:3, unitName:"Options"},
-      {unitId:4, unitName:"Options"},
-      {unitId:5, unitName:"Options"},
-      {unitId:6, unitName:"Options"},
-      {unitId:7, unitName:"Options"},
-      {unitId:8, unitName:"Options"},
-      {unitId:9, unitName:"Options"}
-    ];
 
     this.preferredTime = [
       {pTimeId:1, pTimeValue:"Options"},
@@ -74,50 +51,30 @@ export class CreateOrderComponent implements OnInit {
     this.materialList = [
       {materialId:1, materialName:"Options"},
       {materialId:2, materialName:"Options"},
-    ]
+    ];
 
+    this.getServicesData();
+    this.getUnitData();
   }
 
-  backToForm1(){
-    this.showForm1 = true;
-    this.showForm2 = false;
-    this.showForm3 = false;
-    this.showForm4 = false;
+  getServicesData(){
+    this.dataServices.getServiceListData().subscribe((res:any) => {
+      console.log(res);
+      if(res){
+        this.provideServices = res;
+      }
+    });
   }
 
-  moveToForm2(){
-    this.showForm1 = false;
-    this.showForm2 = true;
-    this.showForm3 = false;
-    this.showForm4 = false;
+  getUnitData(){
+    this.dataServices.getUnitList().subscribe((res:any) => {
+      console.log(res);
+      if(res && res.status == 200){
+        this.unitList = res.data;
+      }
+    });
   }
 
-  backToForm2(){
-    this.showForm1 = false;
-    this.showForm2 = true;
-    this.showForm3 = false;
-    this.showForm4 = false;
-  }
 
-  moveToForm3(){
-    this.showForm1 = false;
-    this.showForm2 = false;
-    this.showForm3 = true;
-    this.showForm4 = false;
-  }
-
-  backToForm3(){
-    this.showForm1 = false;
-    this.showForm2 = false;
-    this.showForm3 = true;
-    this.showForm4 = false;
-  }
-
-  moveToForm4(){
-    this.showForm1 = false;
-    this.showForm2 = false;
-    this.showForm3 = false;
-    this.showForm4 = true;
-  }
 
 }

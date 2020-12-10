@@ -24,9 +24,9 @@
               <div class="form-group">
                 <label for="">Choose requested service</label>
                 <div class="form-check" *ngFor="let services of provideServices">
-                  <input class="form-check-input" type="checkbox" value="" id="{{services.servicesId}}">
+                  <input class="form-check-input" type="checkbox" value="{{services.category}}" id="{{services.cid}}">
                   <label class="form-check-label" for="defaultCheck1">
-                    {{services.servicesName}}
+                    {{services.category}}
                   </label>
                 </div>
               </div>
@@ -35,9 +35,9 @@
               <div class="form-group">
                 <label for="">Choose the type unit</label>
                 <div class="form-check" *ngFor="let unit of unitList">
-                  <input class="form-check-input" type="radio" value="" id="{{unit.unitId}}">
+                  <input class="form-check-input" type="radio" value="{{unit.service-unit}}" id="{{unit.unid}}">
                   <label class="form-check-label" for="defaultCheck1">
-                    {{unit.unitName}}
+                    {{unit.unid}}
                   </label>
                 </div>
               </div>

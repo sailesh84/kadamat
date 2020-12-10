@@ -100,3 +100,10 @@
   line-height: 80px;
   letter-spacing: 1px;
 }
+
+.mat-checkbox{
+	margin-left: 10px;
+	color: #595959;
+  letter-spacing: 1px;
+  font-weight: 500;
+}

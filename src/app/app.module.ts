@@ -30,6 +30,7 @@ import { CreateOrderComponent } from './components/create-order/create-order.com
 import { MatStepperModule } from '@angular/material/stepper';
 import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { OrderDetailsComponent } from './components/order-details/order-details.
     FormsModule,
     FlexLayoutModule,
   HttpClientModule,
-  MatStepperModule
+  MatStepperModule,
+  MatCheckboxModule
   ],
   providers: [DataServiceService],
   bootstrap: [AppComponent],
