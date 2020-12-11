@@ -38,3 +38,37 @@ color: #585858;
 .top-nav{
 	margin-top: 4%;
 }
+
+.form>.form-group>label, .form>.col-md-6>.form-group>label, .form>.col-md-12>.form-group>label{
+  display: block;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  margin-bottom: 0px;
+}
+
+.form>.form-group>.form-control, .form>.col-md-6>.form-group>.form-control{
+  height:40px;
+}
+
+.form>.form-group>.btn-primary, .form>.col-md-12>.form-group>.btn-primary{
+  background: #27a9c1;
+  border-color: #27a9c1;
+  box-shadow: 0px -2px 10px 0px rgba(39,169,193,0.42);
+  border-radius: 0px;
+  width: 200px;
+}
+
+label>a{
+  color: #595959;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+.invalid-feedback{
+  margin-top: 0rem;
+}
+
+.error-message{
+  font-size: 12px;
+}
