@@ -31,6 +31,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     FlexLayoutModule,
   HttpClientModule,
   MatStepperModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatListModule
   ],
   providers: [DataServiceService],
   bootstrap: [AppComponent],

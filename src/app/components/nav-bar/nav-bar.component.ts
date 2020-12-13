@@ -19,6 +19,8 @@ export class NavBarComponent implements OnInit {
   signUpForm: FormGroup;
   submit: boolean = false;
   submitted: boolean = false;
+  popMessage: String;
+  display: string;
 
   //public data2 = {};
   constructor(
@@ -30,6 +32,8 @@ export class NavBarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
+    this.display = 'none';
     this.dataService.getServiceListData().subscribe((response) => {
       this.apiResponse = response;
       // console.log('response from GET API is ', this.apiResponse);
@@ -84,7 +88,32 @@ export class NavBarComponent implements OnInit {
     if(userSignupData.invalid) {
       return;
     } else {
-      console.log("userSignupData", userSignupData.value);
+      let regData = {
+        u_name: userSignupData.value.name,
+        mobile: userSignupData.value.mobileNo,
+        u_email: userSignupData.value.emailId,
+        u_password: userSignupData.value.password
+      };
+      console.log("userSignupData", regData);
+      this.dataService.userReg(regData).subscribe((res:any) =>{
+        console.log('user reg response', res);
+        if (res && res.status == 200) {
+          this.popMessage = '<i class="fa fa-check-circle icon" aria-hidden="true"></i>' + res.message;
+          setTimeout(() => {
+            this.popMessage = '';
+            this.signUpForm.reset();
+            this.display = 'none';
+          }, 3000);
+
+        }else{
+          if (res && res.message) {
+            this.popMessage = '<i class="fas fa-exclamation-triangle icon"></i>' + res.message;
+            setTimeout(() => {
+              this.popMessage = '';
+            }, 3000);
+          }
+        }
+      });
     }
   }
 

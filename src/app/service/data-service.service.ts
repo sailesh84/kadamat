@@ -52,4 +52,22 @@ export class DataServiceService {
     let finalUrl = apiUrl + 'categoryList';
     return this.http.get(finalUrl);
   }
+
+  createProvider(provider){
+    let apiUrl = urls.LOCAL_SERV_URL;
+    let finalUrl = apiUrl + 'serviceProvider';
+    return this.http.post(finalUrl, provider);
+  }
+
+  createOrder(order){
+    let apiUrl = urls.LOCAL_SERV_URL;
+    let finalUrl = apiUrl + 'createOrder';
+    return this.http.post(finalUrl, order);
+  }
+
+  userReg(user){
+    let apiUrl = urls.LOCAL_SERV_URL;
+    let finalUrl = apiUrl + 'new';
+    return this.http.post(finalUrl, user);
+  }
 }

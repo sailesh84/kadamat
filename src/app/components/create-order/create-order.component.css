@@ -90,3 +90,7 @@
 .inactive{
   display: none;
 }
+
+.mat-form-field{
+  width: 100%;
+}

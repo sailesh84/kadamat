@@ -72,3 +72,8 @@ label>a{
 .error-message{
   font-size: 12px;
 }
+
+.alert-success{
+  font-size: 15px;
+  padding: 10px;
+}

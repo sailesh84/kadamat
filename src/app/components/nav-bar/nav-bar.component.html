@@ -105,7 +105,8 @@
     </div>
   </div>
 
-  <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true" [ngStyle]="{'display':display}">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header text-center">
@@ -117,6 +118,10 @@
 
         <div class="modal-body">
           <form class="form" [formGroup]="signUpForm">
+            <div class="col-md-12" *ngIf="popMessage">
+              <div class="alert alert-success" [innerHtml]="popMessage">
+              </div>
+            </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label for="exampleInputPassword1">Name</label>
