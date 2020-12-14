@@ -47,6 +47,12 @@ export class DataServiceService {
     return this.http.get(finalUrl);
   }
 
+  getOrderList(){
+    let apiUrl = urls.LOCAL_SERV_URL;
+    let finalUrl = apiUrl + 'orderList';
+    return this.http.get(finalUrl);
+  }
+
   getServiceListData(){
     let apiUrl = urls.LOCAL_SERV_URL;
     let finalUrl = apiUrl + 'categoryList';

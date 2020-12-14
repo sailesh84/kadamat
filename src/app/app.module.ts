@@ -32,6 +32,8 @@ import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatListModule} from '@angular/material/list';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {DialogModule} from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import {MatListModule} from '@angular/material/list';
   HttpClientModule,
   MatStepperModule,
   MatCheckboxModule,
-  MatListModule
+  MatListModule,
+  MatAutocompleteModule,
+  DialogModule
   ],
   providers: [DataServiceService],
   bootstrap: [AppComponent],

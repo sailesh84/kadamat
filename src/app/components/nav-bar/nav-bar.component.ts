@@ -20,7 +20,8 @@ export class NavBarComponent implements OnInit {
   submit: boolean = false;
   submitted: boolean = false;
   popMessage: String;
-  display: string;
+  openPopup: boolean = false;
+  display='none';
 
   //public data2 = {};
   constructor(
@@ -33,7 +34,6 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.display = 'none';
     this.dataService.getServiceListData().subscribe((response) => {
       this.apiResponse = response;
       // console.log('response from GET API is ', this.apiResponse);
@@ -88,6 +88,11 @@ export class NavBarComponent implements OnInit {
     if(userSignupData.invalid) {
       return;
     } else {
+
+      // this.router.navigateByUrl('/create-order');
+      // this.openPopup = false;
+
+
       let regData = {
         u_name: userSignupData.value.name,
         mobile: userSignupData.value.mobileNo,
@@ -101,8 +106,9 @@ export class NavBarComponent implements OnInit {
           this.popMessage = '<i class="fa fa-check-circle icon" aria-hidden="true"></i>' + res.message;
           setTimeout(() => {
             this.popMessage = '';
+            this.display='none';
             this.signUpForm.reset();
-            this.display = 'none';
+            this.router.navigateByUrl('/create-order');
           }, 3000);
 
         }else{
@@ -115,6 +121,15 @@ export class NavBarComponent implements OnInit {
         }
       });
     }
+  }
+
+  openModalDialog(){
+      this.display='block'; //Set block css
+      return false;
+  }
+
+  closeModalDialog(){
+    this.display='none'; //set none css after close dialog
   }
 
 }

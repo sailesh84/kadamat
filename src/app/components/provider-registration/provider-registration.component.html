@@ -3,12 +3,11 @@
     <h1>Provider Registration</h1>
   </div>
   <div class="row">
-    <div class="col-md-12">
-      <div class="col-md-12" *ngIf="popMessage">
-        <div class="alert alert-success" [innerHtml]="popMessage">
-        </div>
+    <div class="col-md-12" *ngIf="popMessage">
+      <div class="alert alert-success" [innerHtml]="popMessage">
       </div>
-
+    </div>
+    <div class="col-md-12">
       <mat-horizontal-stepper labelPosition="bottom" linear>
         <mat-step [stepControl]="personalInfoFormGroup">
           <ng-template matStepLabel>Personal Information</ng-template>

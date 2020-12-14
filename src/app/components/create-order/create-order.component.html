@@ -3,12 +3,11 @@
     <h1>Create Order</h1>
   </div>
   <div class="row">
-    <div class="col-md-12">
-      <div class="col-md-12" *ngIf="popMessage">
-        <div class="alert alert-success" [innerHtml]="popMessage">
-        </div>
+    <div class="col-md-12" *ngIf="popMessage">
+      <div class="alert alert-success" [innerHtml]="popMessage">
       </div>
-
+    </div>
+    <div class="col-md-12">
       <mat-horizontal-stepper labelPosition="bottom" linear>
         <mat-step [stepControl]="formOneFormGroup">
           <ng-template matStepLabel>Step1</ng-template>
@@ -16,7 +15,13 @@
             <div class="main-wrapper">
               <div class="col-md-6 marg-bottom-20">
                 <mat-form-field>
-                  <input matInput placeholder="Select Area" name="selectArea" formControlName="selectArea" required>
+                  <input type="text" placeholder="Select Area" matInput formControlName="selectArea" [matAutocomplete]="auto" required >
+                  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                    <mat-option *ngFor="let areas of areasCoveredForServices" value="{{areas.area}}">
+                      {{areas.area}}
+                    </mat-option>
+                  </mat-autocomplete>
+                  <!-- <input matInput placeholder="Select Area" name="selectArea" formControlName="selectArea" required> -->
                 </mat-form-field>
               </div>
 
@@ -39,7 +44,7 @@
                 <label for="">Choose the type unit</label>
                 <mat-selection-list formControlName="unitList">
                   <mat-list-option *ngFor="let unit of unitList" value="{{unit.unid}}">
-                    {{unit.unid}}
+                    {{unit.serviceUnit}}
                   </mat-list-option>
                 </mat-selection-list>
               </div>
@@ -69,15 +74,16 @@
                 </mat-form-field>
               </div>
 
-              <div class="col-md-12">
+              <!-- <div class="col-md-12">
                 <h2 class="sub-child-heading">Add photos of the problem (optional)</h2>
-              </div>
+                <input type="file" name="" id="" (change)="onFileSelected($event)">
+              </div> -->
 
               <div class="col-md-12">
                 <h2 class="sub-child-heading">Preferred time for execution</h2>
                 <mat-selection-list formControlName="preferredTime">
-                  <mat-list-option *ngFor="let pTime of preferredTime" value="{{pTime.pTimeId}}">
-                    {{pTime.pTimeValue}}
+                  <mat-list-option *ngFor="let pTime of preferredTime" value="{{pTime.tfeID}}">
+                    {{pTime.timeForExecution}}
                   </mat-list-option>
                 </mat-selection-list>
               </div>
@@ -111,22 +117,23 @@
                 </mat-selection-list>
               </div>
 
-              <div class="col-md-12 marg-bottom-20">
-                <label for="">Choose Gender of worker</label>
-                <mat-selection-list formControlName="gnd">
-                  <mat-list-option *ngFor="let gender of genderList" value="{{gender.genderId}}">
-                    {{gender.genderName}}
-                  </mat-list-option>
-                </mat-selection-list>
-              </div>
-
               <div class="col-md-6 marg-bottom-20">
+                <label for="">Choose Gender of worker</label>
                 <mat-form-field>
-                  <input matInput placeholder="Choose daily hours" name="" formControlName="dailyHours">
+                  <mat-select formControlName="gnd">
+                    <mat-option *ngFor="let gender of genderList" value="{{gender.genderName}}">{{gender.genderName}}</mat-option>
+                  </mat-select>
                 </mat-form-field>
               </div>
 
-              <div class="col-md-12 marg-bottom-20">
+              <div class="col-md-6 marg-bottom-20">
+                <label for="">Choose daily hours</label>
+                <mat-form-field>
+                  <input matInput name="" formControlName="dailyHours">
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 marg-bottom-20">
                 <label for="">Required materials</label>
                 <mat-selection-list formControlName="mtrl">
                   <mat-list-option *ngFor="let material of materialList" value="{{material.materialId}}">
@@ -136,8 +143,9 @@
               </div>
 
               <div class="col-md-6 marg-bottom-20">
+                <label for="">Number of days required</label>
                 <mat-form-field>
-                  <input matInput placeholder="Number of days required" name="" formControlName="noOfDaysReq">
+                  <input matInput name="" formControlName="noOfDaysReq">
                 </mat-form-field>
               </div>
 
@@ -145,63 +153,61 @@
                 <button class="btn btn-lg btn-wb btn-custom btn-primary" matStepperPrevious>Back</button>
               </div>
               <div class="col-md-12 text-center">
-                <!-- <button class="btn btn-lg btn-wb btn-custom btn-secondary" matStepperNext>Continue</button> -->
-                <button class="btn btn-lg btn-wb btn-custom btn-secondary" mat-button type="button"
-                (click)="orderCreation()">Submit</button>
+                <button class="btn btn-lg btn-wb btn-custom btn-secondary" matStepperNext (click)="finalConfirmBeforeSubmit()">Continue</button>
               </div>
             </div>
           </form>
         </mat-step>
 
-        <!-- <mat-step>
+        <mat-step>
           <ng-template matStepLabel>Step4</ng-template>
           <div class="main-wrapper">
             <div class="col-md-6">
               <div class="form-group marg-bottom-30">
                 <label for="exampleInputPassword1">Area</label>
-                <h4>Al Ghuwariyah</h4>
+                <h4>{{selectedArea}}</h4>
               </div>
               <div class="form-group marg-bottom-30">
                 <label for="exampleInputPassword1">Location</label>
-                <h4>Al Ghuwariyah , Qatar 901</h4>
+                <h4>{{selectedLocation}}</h4>
               </div>
               <div class="form-group marg-bottom-30">
                 <label for="exampleInputPassword1">Type of service</label>
-                <h4>House maid</h4>
+                <h4>{{selectedServices}}</h4>
               </div>
               <div class="form-group marg-bottom-30">
                 <label for="exampleInputPassword1">Unit type</label>
-                <h4>Apartement</h4>
+                <h4>{{selectedUnit}}</h4>
               </div>
               <div class="form-group marg-bottom-30">
                 <label for="exampleInputPassword1">Number of workers</label>
-                <h4>3</h4>
+                <h4>{{selectedNoOfWorkers}}</h4>
               </div>
               <div class="form-group marg-bottom-30">
                 <label for="exampleInputPassword1">Nationality</label>
-                <h4>Bengali, Indonesian</h4>
+                <h4>{{selectedNationality}}</h4>
               </div>
               <div class="form-group marg-bottom-30">
                 <label for="exampleInputPassword1">Worker Gender</label>
-                <h4>Male</h4>
+                <h4>{{selectedGender}}</h4>
               </div>
               <div class="form-group marg-bottom-30">
                 <label for="exampleInputPassword1">Required materials</label>
-                <h4>Service provider brings it</h4>
+                <h4>{{selectedMaterials}}</h4>
               </div>
               <div class="form-group marg-bottom-30">
                 <label for="exampleInputPassword1">Number of days required</label>
-                <h4>10</h4>
+                <h4>{{selectedNoOfDays}}</h4>
               </div>
               <div class="form-group marg-bottom-30">
                 <label for="exampleInputPassword1">Preferred time</label>
-                <h4>Today</h4>
+                <h4>{{selectedPreferredTime}}</h4>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label for="exampleInputPassword1">Request description</label>
-                <h4>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.</h4>
+                <h4>{{selectedRequestDescription}}</h4>
               </div>
             </div>
             <div class="col-md-12 text-center">
@@ -212,7 +218,7 @@
                 (click)="orderCreation()">Submit</button>
             </div>
           </div>
-        </mat-step> -->
+        </mat-step>
       </mat-horizontal-stepper>
     </div>
   </div>

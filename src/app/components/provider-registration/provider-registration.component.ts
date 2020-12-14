@@ -85,6 +85,12 @@ export class ProviderRegistrationComponent implements OnInit {
     this.persInfoData = this.personalInfoFormGroup.value;
     this.profInfoData = this.professionalInfoFormGroup.value
 
+    let arrServiceList = this.profInfoData.servicesList;
+    let strServiceList = arrServiceList.join();
+
+    let arrAreaList = this.profInfoData.servicesList;
+    let strAreaList = arrAreaList.join();
+
     let pData = {
       profile_image: "https://sim.is/wp-content/uploads/2013/11/dummy-image-landscape.jpg",
       mobile: this.persInfoData.mobileNo,
@@ -94,9 +100,10 @@ export class ProviderRegistrationComponent implements OnInit {
       password: this.persInfoData.password,
       type: this.profInfoData.typeList,
       company_file: "https://sim.is/wp-content/uploads/2013/11/dummy-image-landscape.jpg",
-      cid: "1",
-      aid: "1"
+      cid: strServiceList,
+      aid: strAreaList
     }
+    // console.log(pData);
 
     this.dataServices.createProvider(pData).subscribe((res:any) =>{
       console.log('create provider response', res);
